@@ -47,7 +47,7 @@ export default function ContactForm() {
             </div>
             <div>
               <h4 className="font-serif text-2xl text-[#bba373]">Email Us</h4>
-              <p className="text-[#f5f1e8]/70">info@outreachtours.com</p>
+              <p className="text-[#f5f1e8]/70">legacy@outreachtours.com</p>
             </div>
           </div>
         </div>
@@ -68,8 +68,32 @@ export default function ContactForm() {
             <button type="submit" disabled={status === 'loading'} className="mt-6 bg-[#bba373] text-[#2c3031] font-bold py-4 px-8 rounded hover:bg-[#a68f61] transition-colors text-lg shadow-lg disabled:opacity-50">
               {status === 'loading' ? 'Sending...' : 'Request Briefing'}
             </button>
-            {status === 'success' && <p className="text-green-500 text-sm mt-2">Message sent successfully!</p>}
-            {status === 'error' && <p className="text-red-500 text-sm mt-2">Failed to send message. Please try again.</p>}
+            {status === 'success' && (
+              <div className="mt-4 p-4 rounded-lg bg-[#bba373]/10 border border-[#bba373]/40 text-[#f5f1e8] flex items-center gap-3 transition-all duration-300">
+                <div className="w-8 h-8 rounded-full bg-[#bba373]/20 flex items-center justify-center text-[#bba373] flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-[#bba373]">Expedition Inquiry Received</h5>
+                  <p className="text-xs text-[#f5f1e8]/80">Thank you for reaching out. Our team will connect with you shortly.</p>
+                </div>
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="mt-4 p-4 rounded-lg bg-red-900/20 border border-red-500/40 text-[#f5f1e8] flex items-center gap-3 transition-all duration-300">
+                <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-red-400">Submission Failed</h5>
+                  <p className="text-xs text-[#f5f1e8]/80">An error occurred while sending your request. Please try again.</p>
+                </div>
+              </div>
+            )}
           </form>
         </div>
       </div>
