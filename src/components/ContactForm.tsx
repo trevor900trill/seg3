@@ -43,7 +43,7 @@ export default function ContactForm() {
             </div>
             <div>
               <h4 className="font-serif text-2xl text-[#bba373]">Call Us</h4>
-              <p className="text-[#f5f1e8]/70">+254 722 971024</p>
+              <p className="text-[#f5f1e8]/70">0703175869</p>
             </div>
             <div>
               <h4 className="font-serif text-2xl text-[#bba373]">Email Us</h4>
